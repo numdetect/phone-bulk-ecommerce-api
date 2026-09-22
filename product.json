@@ -1,0 +1,62 @@
+{
+  "name": "Bulk E-commerce Active",
+  "brand": "NumDetect",
+  "repository": "numdetect/phone-bulk-ecommerce-api",
+  "description": "Start the next commerce campaign with a more focused audience. Find available e-commerce activity signals, shape audience and remarketing segments around records worth review, and keep the boundary clear: the result is not an order, purchase intent or platform-activity record.",
+  "official_site": "https://numdetect.com",
+  "landing_page": "https://numdetect.com/products/number_ecommerce_batch",
+  "canonical_docs": "https://numdetect.com/api-docs",
+  "base_url": "https://numdetect.com",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "mode": "async-bulk",
+  "product": "number_ecommerce_batch",
+  "identifier_kind": "phone",
+  "requires_country": true,
+  "endpoints": {
+    "submit": {
+      "method": "POST",
+      "path": "/api/v1/bulk-tasks"
+    },
+    "status": {
+      "method": "GET",
+      "path": "/api/v1/bulk-tasks/{id}"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/api/v1/balance"
+    }
+  },
+  "limits": {
+    "min_items": 500,
+    "max_items": 100000,
+    "poll_interval_seconds": 30,
+    "file_formats": [
+      "txt",
+      "csv"
+    ]
+  },
+  "result_fields": [
+    {
+      "name": "number",
+      "example": "17253100591",
+      "description": "The original submitted E.164 number, used to write the result back to customer, lead or audience records. It does not contain order, product or platform-activity information."
+    },
+    {
+      "name": "activated",
+      "example": "yes",
+      "description": "Whether an available e-commerce activity signal was returned. It can support audience review and campaign planning, but does not represent an order, transaction value, purchase intent or a specific platform activity."
+    }
+  ],
+  "statuses": [
+    "processing",
+    "success",
+    "failed"
+  ],
+  "pricing_url": "https://numdetect.com/pricing",
+  "maintainer": "NumDetect",
+  "license": "MIT",
+  "last_reviewed": "2026-09-22"
+}
