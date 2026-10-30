@@ -1,5 +1,5 @@
 {
-  "name": "Bulk E-commerce Active",
+  "name": "E-commerce Activity",
   "brand": "NumDetect",
   "repository": "numdetect/phone-bulk-ecommerce-api",
   "description": "Start the next commerce campaign with a more focused audience. Find available e-commerce activity signals, shape audience and remarketing segments around records worth review, and keep the boundary clear: the result is not an order, purchase intent or platform-activity record.",
@@ -31,7 +31,7 @@
   },
   "limits": {
     "min_items": 500,
-    "max_items": 100000,
+    "max_items": 500000,
     "poll_interval_seconds": 30,
     "file_formats": [
       "txt",
@@ -40,14 +40,14 @@
   },
   "result_fields": [
     {
-      "name": "number",
-      "example": "17253100591",
-      "description": "The original submitted E.164 number, used to write the result back to customer, lead or audience records. It does not contain order, product or platform-activity information."
+      "name": "identifier",
+      "example": "12345678900",
+      "description": "Submitted identifier, used to join the result to the input. Phone identifiers include their country code."
     },
     {
       "name": "activated",
-      "example": "yes",
-      "description": "Whether an available e-commerce activity signal was returned. It can support audience review and campaign planning, but does not represent an order, transaction value, purchase intent or a specific platform activity."
+      "example": "true",
+      "description": "The determined positive/negative signal for this product; interpret it in the product context."
     }
   ],
   "statuses": [
@@ -58,5 +58,5 @@
   "pricing_url": "https://numdetect.com/pricing",
   "maintainer": "NumDetect",
   "license": "MIT",
-  "last_reviewed": "2026-09-22"
+  "last_reviewed": "2026-10-30"
 }
